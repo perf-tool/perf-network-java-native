@@ -24,16 +24,25 @@ import com.perftool.network.http.HttpClientService;
 import com.perftool.network.metrics.MetricsHandler;
 import com.perftool.network.util.ConfigUtil;
 import com.sun.net.httpserver.HttpServer;
+import lombok.extern.log4j.Log4j2;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 
+@Log4j2
 public class Perfn {
 
     public static void start(String protocolType, String commType, boolean prometheusMetricsDisable) throws Exception {
         if (!prometheusMetricsDisable) {
-            HttpServer httpServer = HttpServer.create(new InetSocketAddress("0.0.0.0", 20008), 0);
-            httpServer.createContext("/metrics", new MetricsHandler());
-            httpServer.start();
+            new Thread(() -> {
+                try {
+                    HttpServer httpServer = HttpServer.create(new InetSocketAddress("0.0.0.0", 20008), 0);
+                    httpServer.createContext("/metrics", new MetricsHandler());
+                    httpServer.start();
+                } catch (IOException e) {
+                    log.error("start prometheus metrics server error", e);
+                }
+            }).start();
         }
         if (PerfnConst.PROTOCOL_TYPE_HTTP.equals(protocolType)) {
             if (PerfnConst.COMM_TYPE_CLIENT.equals(commType)) {
