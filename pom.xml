@@ -41,7 +41,7 @@
         <checkstyle-plugin.version>3.2.1</checkstyle-plugin.version>
         <lombok.version>1.18.24</lombok.version>
         <native-image-build-plugin.version>21.2.0</native-image-build-plugin.version>
-        <puppycrawl.version>10.6.0</puppycrawl.version>
+        <puppycrawl.version>10.7.0</puppycrawl.version>
     </properties>
 
     <dependencies>
