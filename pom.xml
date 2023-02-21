@@ -36,7 +36,7 @@
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <graal.version>22.3.1</graal.version>
         <guava.version>31.1-jre</guava.version>
-        <log4j2.version>2.19.0</log4j2.version>
+        <log4j2.version>2.20.0</log4j2.version>
         <!-- plugin -->
         <checkstyle-plugin.version>3.2.1</checkstyle-plugin.version>
         <lombok.version>1.18.26</lombok.version>
