@@ -34,7 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- dependency -->
         <commons-lang3.version>3.13.0</commons-lang3.version>
-        <graal.version>23.0.1</graal.version>
+        <graal.version>23.1.0</graal.version>
         <guava.version>32.1.2-jre</guava.version>
         <log4j2.version>2.20.0</log4j2.version>
         <!-- plugin -->
